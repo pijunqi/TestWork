@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.WsPatientMapper">
+  <resultMap id="BaseResultMap" type="com.domain.WsPatient">
+    <!--@mbg.generated-->
+    <!--@Table WS_PATIENT-->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PATIENT_NO" jdbcType="VARCHAR" property="patientNo" />
+    <result column="NAME_PATIENT" jdbcType="VARCHAR" property="namePatient" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="BRITHDAY" jdbcType="VARCHAR" property="brithday" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, PATIENT_NO, NAME_PATIENT, SEX, CREATEDATE, BRITHDAY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from WS_PATIENT
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from WS_PATIENT
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.domain.WsPatient">
+    <!--@mbg.generated-->
+    insert into WS_PATIENT (ID, PATIENT_NO, NAME_PATIENT, 
+      SEX, CREATEDATE, BRITHDAY
+      )
+    values (#{id,jdbcType=VARCHAR}, #{patientNo,jdbcType=VARCHAR}, #{namePatient,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, #{brithday,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.domain.WsPatient">
+    <!--@mbg.generated-->
+    insert into WS_PATIENT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="patientNo != null">
+        PATIENT_NO,
+      </if>
+      <if test="namePatient != null">
+        NAME_PATIENT,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+      <if test="brithday != null">
+        BRITHDAY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="patientNo != null">
+        #{patientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="namePatient != null">
+        #{namePatient,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brithday != null">
+        #{brithday,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.WsPatient">
+    <!--@mbg.generated-->
+    update WS_PATIENT
+    <set>
+      <if test="patientNo != null">
+        PATIENT_NO = #{patientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="namePatient != null">
+        NAME_PATIENT = #{namePatient,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brithday != null">
+        BRITHDAY = #{brithday,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.WsPatient">
+    <!--@mbg.generated-->
+    update WS_PATIENT
+    set PATIENT_NO = #{patientNo,jdbcType=VARCHAR},
+      NAME_PATIENT = #{namePatient,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      BRITHDAY = #{brithday,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.WsSysUserMapper">
+  <resultMap id="BaseResultMap" type="com.domain.WsSysUser">
+    <!--@mbg.generated-->
+    <!--@Table WS_SYS_USER-->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="NAME_USER" jdbcType="VARCHAR" property="nameUser" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="DOCTOR_ID" jdbcType="VARCHAR" property="doctorId" />
+    <result column="TYPE" jdbcType="DECIMAL" property="type" />
+    <result column="ZT" jdbcType="DECIMAL" property="zt" />
+    <result column="TIME_START" jdbcType="TIMESTAMP" property="timeStart" />
+    <result column="TIME_END" jdbcType="TIMESTAMP" property="timeEnd" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, NAME_USER, "PASSWORD", DOCTOR_ID, "TYPE", ZT, TIME_START, TIME_END, CREATEDATE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from WS_SYS_USER
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from WS_SYS_USER
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.domain.WsSysUser">
+    <!--@mbg.generated-->
+    insert into WS_SYS_USER (ID, NAME_USER, "PASSWORD", 
+      DOCTOR_ID, "TYPE", ZT, 
+      TIME_START, TIME_END, CREATEDATE
+      )
+    values (#{id,jdbcType=VARCHAR}, #{nameUser,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{doctorId,jdbcType=VARCHAR}, #{type,jdbcType=DECIMAL}, #{zt,jdbcType=DECIMAL}, 
+      #{timeStart,jdbcType=TIMESTAMP}, #{timeEnd,jdbcType=TIMESTAMP}, #{createdate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.domain.WsSysUser">
+    <!--@mbg.generated-->
+    insert into WS_SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="nameUser != null">
+        NAME_USER,
+      </if>
+      <if test="password != null">
+        "PASSWORD",
+      </if>
+      <if test="doctorId != null">
+        DOCTOR_ID,
+      </if>
+      <if test="type != null">
+        "TYPE",
+      </if>
+      <if test="zt != null">
+        ZT,
+      </if>
+      <if test="timeStart != null">
+        TIME_START,
+      </if>
+      <if test="timeEnd != null">
+        TIME_END,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="nameUser != null">
+        #{nameUser,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorId != null">
+        #{doctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="zt != null">
+        #{zt,jdbcType=DECIMAL},
+      </if>
+      <if test="timeStart != null">
+        #{timeStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeEnd != null">
+        #{timeEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.WsSysUser">
+    <!--@mbg.generated-->
+    update WS_SYS_USER
+    <set>
+      <if test="nameUser != null">
+        NAME_USER = #{nameUser,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        "PASSWORD" = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorId != null">
+        DOCTOR_ID = #{doctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        "TYPE" = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="zt != null">
+        ZT = #{zt,jdbcType=DECIMAL},
+      </if>
+      <if test="timeStart != null">
+        TIME_START = #{timeStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeEnd != null">
+        TIME_END = #{timeEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdate != null">
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.WsSysUser">
+    <!--@mbg.generated-->
+    update WS_SYS_USER
+    set NAME_USER = #{nameUser,jdbcType=VARCHAR},
+      "PASSWORD" = #{password,jdbcType=VARCHAR},
+      DOCTOR_ID = #{doctorId,jdbcType=VARCHAR},
+      "TYPE" = #{type,jdbcType=DECIMAL},
+      ZT = #{zt,jdbcType=DECIMAL},
+      TIME_START = #{timeStart,jdbcType=TIMESTAMP},
+      TIME_END = #{timeEnd,jdbcType=TIMESTAMP},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

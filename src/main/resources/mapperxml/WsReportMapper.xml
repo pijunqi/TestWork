@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.WsReportMapper">
+  <resultMap id="BaseResultMap" type="com.domain.WsReport">
+    <!--@mbg.generated-->
+    <!--@Table WS_REPORT-->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DATECHECK" jdbcType="TIMESTAMP" property="datecheck" />
+    <result column="NAME_PATIENT" jdbcType="VARCHAR" property="namePatient" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="EXAM_ITEM" jdbcType="VARCHAR" property="examItem" />
+    <result column="PATIENT_NO" jdbcType="VARCHAR" property="patientNo" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="PATIENT_ID" jdbcType="VARCHAR" property="patientId" />
+    <result column="DOCTOR_NAME" jdbcType="VARCHAR" property="doctorName" />
+    <result column="DOCTOR_ID" jdbcType="VARCHAR" property="doctorId" />
+    <result column="CHARGE" jdbcType="DECIMAL" property="charge" />
+    <result column="ZT" jdbcType="DECIMAL" property="zt" />
+    <result column="WATCH" jdbcType="VARCHAR" property="watch" />
+    <result column="WATCHRESULT" jdbcType="VARCHAR" property="watchresult" />
+    <result column="SPECIMEN" jdbcType="VARCHAR" property="specimen" />
+    <result column="SPECIMENRESULT" jdbcType="VARCHAR" property="specimenresult" />
+    <result column="SUGGEST" jdbcType="VARCHAR" property="suggest" />
+    <result column="ASSISTANT" jdbcType="VARCHAR" property="assistant" />
+    <result column="DEVICE" jdbcType="VARCHAR" property="device" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="CLINIC_NO" jdbcType="VARCHAR" property="clinicNo" />
+    <result column="INP_NO" jdbcType="VARCHAR" property="inpNo" />
+    <result column="BED_NO" jdbcType="VARCHAR" property="bedNo" />
+    <result column="PATIENT_AREA" jdbcType="VARCHAR" property="patientArea" />
+    <result column="PATIENT_LOCAL_ID" jdbcType="VARCHAR" property="patientLocalId" />
+    <result column="DOCTOR_SEND_NAME" jdbcType="VARCHAR" property="doctorSendName" />
+    <result column="DOCTOR_SEND" jdbcType="VARCHAR" property="doctorSend" />
+    <result column="DEPT" jdbcType="VARCHAR" property="dept" />
+    <result column="SEQ" jdbcType="DECIMAL" property="seq" />
+    <result column="AGE" jdbcType="DECIMAL" property="age" />
+    <result column="PATIENT_FROM" jdbcType="VARCHAR" property="patientFrom" />
+    <result column="SEND_TYPE" jdbcType="VARCHAR" property="sendType" />
+    <result column="ROOM_ID" jdbcType="VARCHAR" property="roomId" />
+    <result column="EXAM_CONTENT" jdbcType="VARCHAR" property="examContent" />
+    <result column="WARNING_CONTAGION4" jdbcType="VARCHAR" property="warningContagion4" />
+    <result column="WARNING_MEDICAL" jdbcType="VARCHAR" property="warningMedical" />
+    <result column="WARNING_ALLERGY" jdbcType="VARCHAR" property="warningAllergy" />
+    <result column="PRINTCOUNT" jdbcType="DECIMAL" property="printcount" />
+    <result column="NURSE_ID" jdbcType="VARCHAR" property="nurseId" />
+    <result column="ACTUAL_INSPECTION_TIME" jdbcType="TIMESTAMP" property="actualInspectionTime" />
+    <result column="UREASE" jdbcType="VARCHAR" property="urease" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, DATECHECK, NAME_PATIENT, SEX, EXAM_ITEM, PATIENT_NO, PHONE, PATIENT_ID, DOCTOR_NAME, 
+    DOCTOR_ID, CHARGE, ZT, WATCH, WATCHRESULT, SPECIMEN, SPECIMENRESULT, SUGGEST, ASSISTANT, 
+    DEVICE, CREATEDATE, CLINIC_NO, INP_NO, BED_NO, PATIENT_AREA, PATIENT_LOCAL_ID, DOCTOR_SEND_NAME, 
+    DOCTOR_SEND, DEPT, SEQ, AGE, PATIENT_FROM, SEND_TYPE, ROOM_ID, EXAM_CONTENT, WARNING_CONTAGION4, 
+    WARNING_MEDICAL, WARNING_ALLERGY, PRINTCOUNT, NURSE_ID, ACTUAL_INSPECTION_TIME, UREASE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from WS_REPORT
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from WS_REPORT
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.domain.WsReport">
+    <!--@mbg.generated-->
+    insert into WS_REPORT (ID, DATECHECK, NAME_PATIENT, 
+      SEX, EXAM_ITEM, PATIENT_NO, 
+      PHONE, PATIENT_ID, DOCTOR_NAME, 
+      DOCTOR_ID, CHARGE, ZT, 
+      WATCH, WATCHRESULT, SPECIMEN, 
+      SPECIMENRESULT, SUGGEST, ASSISTANT, 
+      DEVICE, CREATEDATE, CLINIC_NO, 
+      INP_NO, BED_NO, PATIENT_AREA, 
+      PATIENT_LOCAL_ID, DOCTOR_SEND_NAME, DOCTOR_SEND, 
+      DEPT, SEQ, AGE, PATIENT_FROM, 
+      SEND_TYPE, ROOM_ID, EXAM_CONTENT, 
+      WARNING_CONTAGION4, WARNING_MEDICAL, WARNING_ALLERGY, 
+      PRINTCOUNT, NURSE_ID, ACTUAL_INSPECTION_TIME, 
+      UREASE)
+    values (#{id,jdbcType=VARCHAR}, #{datecheck,jdbcType=TIMESTAMP}, #{namePatient,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{examItem,jdbcType=VARCHAR}, #{patientNo,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{patientId,jdbcType=VARCHAR}, #{doctorName,jdbcType=VARCHAR}, 
+      #{doctorId,jdbcType=VARCHAR}, #{charge,jdbcType=DECIMAL}, #{zt,jdbcType=DECIMAL}, 
+      #{watch,jdbcType=VARCHAR}, #{watchresult,jdbcType=VARCHAR}, #{specimen,jdbcType=VARCHAR}, 
+      #{specimenresult,jdbcType=VARCHAR}, #{suggest,jdbcType=VARCHAR}, #{assistant,jdbcType=VARCHAR}, 
+      #{device,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, #{clinicNo,jdbcType=VARCHAR}, 
+      #{inpNo,jdbcType=VARCHAR}, #{bedNo,jdbcType=VARCHAR}, #{patientArea,jdbcType=VARCHAR}, 
+      #{patientLocalId,jdbcType=VARCHAR}, #{doctorSendName,jdbcType=VARCHAR}, #{doctorSend,jdbcType=VARCHAR}, 
+      #{dept,jdbcType=VARCHAR}, #{seq,jdbcType=DECIMAL}, #{age,jdbcType=DECIMAL}, #{patientFrom,jdbcType=VARCHAR}, 
+      #{sendType,jdbcType=VARCHAR}, #{roomId,jdbcType=VARCHAR}, #{examContent,jdbcType=VARCHAR}, 
+      #{warningContagion4,jdbcType=VARCHAR}, #{warningMedical,jdbcType=VARCHAR}, #{warningAllergy,jdbcType=VARCHAR}, 
+      #{printcount,jdbcType=DECIMAL}, #{nurseId,jdbcType=VARCHAR}, #{actualInspectionTime,jdbcType=TIMESTAMP}, 
+      #{urease,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.domain.WsReport">
+    <!--@mbg.generated-->
+    insert into WS_REPORT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="datecheck != null">
+        DATECHECK,
+      </if>
+      <if test="namePatient != null">
+        NAME_PATIENT,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="examItem != null">
+        EXAM_ITEM,
+      </if>
+      <if test="patientNo != null">
+        PATIENT_NO,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="patientId != null">
+        PATIENT_ID,
+      </if>
+      <if test="doctorName != null">
+        DOCTOR_NAME,
+      </if>
+      <if test="doctorId != null">
+        DOCTOR_ID,
+      </if>
+      <if test="charge != null">
+        CHARGE,
+      </if>
+      <if test="zt != null">
+        ZT,
+      </if>
+      <if test="watch != null">
+        WATCH,
+      </if>
+      <if test="watchresult != null">
+        WATCHRESULT,
+      </if>
+      <if test="specimen != null">
+        SPECIMEN,
+      </if>
+      <if test="specimenresult != null">
+        SPECIMENRESULT,
+      </if>
+      <if test="suggest != null">
+        SUGGEST,
+      </if>
+      <if test="assistant != null">
+        ASSISTANT,
+      </if>
+      <if test="device != null">
+        DEVICE,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+      <if test="clinicNo != null">
+        CLINIC_NO,
+      </if>
+      <if test="inpNo != null">
+        INP_NO,
+      </if>
+      <if test="bedNo != null">
+        BED_NO,
+      </if>
+      <if test="patientArea != null">
+        PATIENT_AREA,
+      </if>
+      <if test="patientLocalId != null">
+        PATIENT_LOCAL_ID,
+      </if>
+      <if test="doctorSendName != null">
+        DOCTOR_SEND_NAME,
+      </if>
+      <if test="doctorSend != null">
+        DOCTOR_SEND,
+      </if>
+      <if test="dept != null">
+        DEPT,
+      </if>
+      <if test="seq != null">
+        SEQ,
+      </if>
+      <if test="age != null">
+        AGE,
+      </if>
+      <if test="patientFrom != null">
+        PATIENT_FROM,
+      </if>
+      <if test="sendType != null">
+        SEND_TYPE,
+      </if>
+      <if test="roomId != null">
+        ROOM_ID,
+      </if>
+      <if test="examContent != null">
+        EXAM_CONTENT,
+      </if>
+      <if test="warningContagion4 != null">
+        WARNING_CONTAGION4,
+      </if>
+      <if test="warningMedical != null">
+        WARNING_MEDICAL,
+      </if>
+      <if test="warningAllergy != null">
+        WARNING_ALLERGY,
+      </if>
+      <if test="printcount != null">
+        PRINTCOUNT,
+      </if>
+      <if test="nurseId != null">
+        NURSE_ID,
+      </if>
+      <if test="actualInspectionTime != null">
+        ACTUAL_INSPECTION_TIME,
+      </if>
+      <if test="urease != null">
+        UREASE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="datecheck != null">
+        #{datecheck,jdbcType=TIMESTAMP},
+      </if>
+      <if test="namePatient != null">
+        #{namePatient,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="examItem != null">
+        #{examItem,jdbcType=VARCHAR},
+      </if>
+      <if test="patientNo != null">
+        #{patientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="patientId != null">
+        #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorName != null">
+        #{doctorName,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorId != null">
+        #{doctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null">
+        #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="zt != null">
+        #{zt,jdbcType=DECIMAL},
+      </if>
+      <if test="watch != null">
+        #{watch,jdbcType=VARCHAR},
+      </if>
+      <if test="watchresult != null">
+        #{watchresult,jdbcType=VARCHAR},
+      </if>
+      <if test="specimen != null">
+        #{specimen,jdbcType=VARCHAR},
+      </if>
+      <if test="specimenresult != null">
+        #{specimenresult,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null">
+        #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="assistant != null">
+        #{assistant,jdbcType=VARCHAR},
+      </if>
+      <if test="device != null">
+        #{device,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clinicNo != null">
+        #{clinicNo,jdbcType=VARCHAR},
+      </if>
+      <if test="inpNo != null">
+        #{inpNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bedNo != null">
+        #{bedNo,jdbcType=VARCHAR},
+      </if>
+      <if test="patientArea != null">
+        #{patientArea,jdbcType=VARCHAR},
+      </if>
+      <if test="patientLocalId != null">
+        #{patientLocalId,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorSendName != null">
+        #{doctorSendName,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorSend != null">
+        #{doctorSend,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null">
+        #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=DECIMAL},
+      </if>
+      <if test="patientFrom != null">
+        #{patientFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="sendType != null">
+        #{sendType,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=VARCHAR},
+      </if>
+      <if test="examContent != null">
+        #{examContent,jdbcType=VARCHAR},
+      </if>
+      <if test="warningContagion4 != null">
+        #{warningContagion4,jdbcType=VARCHAR},
+      </if>
+      <if test="warningMedical != null">
+        #{warningMedical,jdbcType=VARCHAR},
+      </if>
+      <if test="warningAllergy != null">
+        #{warningAllergy,jdbcType=VARCHAR},
+      </if>
+      <if test="printcount != null">
+        #{printcount,jdbcType=DECIMAL},
+      </if>
+      <if test="nurseId != null">
+        #{nurseId,jdbcType=VARCHAR},
+      </if>
+      <if test="actualInspectionTime != null">
+        #{actualInspectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="urease != null">
+        #{urease,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.WsReport">
+    <!--@mbg.generated-->
+    update WS_REPORT
+    <set>
+      <if test="datecheck != null">
+        DATECHECK = #{datecheck,jdbcType=TIMESTAMP},
+      </if>
+      <if test="namePatient != null">
+        NAME_PATIENT = #{namePatient,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="examItem != null">
+        EXAM_ITEM = #{examItem,jdbcType=VARCHAR},
+      </if>
+      <if test="patientNo != null">
+        PATIENT_NO = #{patientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="patientId != null">
+        PATIENT_ID = #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorName != null">
+        DOCTOR_NAME = #{doctorName,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorId != null">
+        DOCTOR_ID = #{doctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="charge != null">
+        CHARGE = #{charge,jdbcType=DECIMAL},
+      </if>
+      <if test="zt != null">
+        ZT = #{zt,jdbcType=DECIMAL},
+      </if>
+      <if test="watch != null">
+        WATCH = #{watch,jdbcType=VARCHAR},
+      </if>
+      <if test="watchresult != null">
+        WATCHRESULT = #{watchresult,jdbcType=VARCHAR},
+      </if>
+      <if test="specimen != null">
+        SPECIMEN = #{specimen,jdbcType=VARCHAR},
+      </if>
+      <if test="specimenresult != null">
+        SPECIMENRESULT = #{specimenresult,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null">
+        SUGGEST = #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="assistant != null">
+        ASSISTANT = #{assistant,jdbcType=VARCHAR},
+      </if>
+      <if test="device != null">
+        DEVICE = #{device,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clinicNo != null">
+        CLINIC_NO = #{clinicNo,jdbcType=VARCHAR},
+      </if>
+      <if test="inpNo != null">
+        INP_NO = #{inpNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bedNo != null">
+        BED_NO = #{bedNo,jdbcType=VARCHAR},
+      </if>
+      <if test="patientArea != null">
+        PATIENT_AREA = #{patientArea,jdbcType=VARCHAR},
+      </if>
+      <if test="patientLocalId != null">
+        PATIENT_LOCAL_ID = #{patientLocalId,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorSendName != null">
+        DOCTOR_SEND_NAME = #{doctorSendName,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorSend != null">
+        DOCTOR_SEND = #{doctorSend,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null">
+        DEPT = #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        SEQ = #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="age != null">
+        AGE = #{age,jdbcType=DECIMAL},
+      </if>
+      <if test="patientFrom != null">
+        PATIENT_FROM = #{patientFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="sendType != null">
+        SEND_TYPE = #{sendType,jdbcType=VARCHAR},
+      </if>
+      <if test="roomId != null">
+        ROOM_ID = #{roomId,jdbcType=VARCHAR},
+      </if>
+      <if test="examContent != null">
+        EXAM_CONTENT = #{examContent,jdbcType=VARCHAR},
+      </if>
+      <if test="warningContagion4 != null">
+        WARNING_CONTAGION4 = #{warningContagion4,jdbcType=VARCHAR},
+      </if>
+      <if test="warningMedical != null">
+        WARNING_MEDICAL = #{warningMedical,jdbcType=VARCHAR},
+      </if>
+      <if test="warningAllergy != null">
+        WARNING_ALLERGY = #{warningAllergy,jdbcType=VARCHAR},
+      </if>
+      <if test="printcount != null">
+        PRINTCOUNT = #{printcount,jdbcType=DECIMAL},
+      </if>
+      <if test="nurseId != null">
+        NURSE_ID = #{nurseId,jdbcType=VARCHAR},
+      </if>
+      <if test="actualInspectionTime != null">
+        ACTUAL_INSPECTION_TIME = #{actualInspectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="urease != null">
+        UREASE = #{urease,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.WsReport">
+    <!--@mbg.generated-->
+    update WS_REPORT
+    set DATECHECK = #{datecheck,jdbcType=TIMESTAMP},
+      NAME_PATIENT = #{namePatient,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      EXAM_ITEM = #{examItem,jdbcType=VARCHAR},
+      PATIENT_NO = #{patientNo,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      PATIENT_ID = #{patientId,jdbcType=VARCHAR},
+      DOCTOR_NAME = #{doctorName,jdbcType=VARCHAR},
+      DOCTOR_ID = #{doctorId,jdbcType=VARCHAR},
+      CHARGE = #{charge,jdbcType=DECIMAL},
+      ZT = #{zt,jdbcType=DECIMAL},
+      WATCH = #{watch,jdbcType=VARCHAR},
+      WATCHRESULT = #{watchresult,jdbcType=VARCHAR},
+      SPECIMEN = #{specimen,jdbcType=VARCHAR},
+      SPECIMENRESULT = #{specimenresult,jdbcType=VARCHAR},
+      SUGGEST = #{suggest,jdbcType=VARCHAR},
+      ASSISTANT = #{assistant,jdbcType=VARCHAR},
+      DEVICE = #{device,jdbcType=VARCHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      CLINIC_NO = #{clinicNo,jdbcType=VARCHAR},
+      INP_NO = #{inpNo,jdbcType=VARCHAR},
+      BED_NO = #{bedNo,jdbcType=VARCHAR},
+      PATIENT_AREA = #{patientArea,jdbcType=VARCHAR},
+      PATIENT_LOCAL_ID = #{patientLocalId,jdbcType=VARCHAR},
+      DOCTOR_SEND_NAME = #{doctorSendName,jdbcType=VARCHAR},
+      DOCTOR_SEND = #{doctorSend,jdbcType=VARCHAR},
+      DEPT = #{dept,jdbcType=VARCHAR},
+      SEQ = #{seq,jdbcType=DECIMAL},
+      AGE = #{age,jdbcType=DECIMAL},
+      PATIENT_FROM = #{patientFrom,jdbcType=VARCHAR},
+      SEND_TYPE = #{sendType,jdbcType=VARCHAR},
+      ROOM_ID = #{roomId,jdbcType=VARCHAR},
+      EXAM_CONTENT = #{examContent,jdbcType=VARCHAR},
+      WARNING_CONTAGION4 = #{warningContagion4,jdbcType=VARCHAR},
+      WARNING_MEDICAL = #{warningMedical,jdbcType=VARCHAR},
+      WARNING_ALLERGY = #{warningAllergy,jdbcType=VARCHAR},
+      PRINTCOUNT = #{printcount,jdbcType=DECIMAL},
+      NURSE_ID = #{nurseId,jdbcType=VARCHAR},
+      ACTUAL_INSPECTION_TIME = #{actualInspectionTime,jdbcType=TIMESTAMP},
+      UREASE = #{urease,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.WsStrucDiagnosisTempletMapper">
+  <resultMap id="BaseResultMap" type="com.domain.WsStrucDiagnosisTemplet">
+    <!--@mbg.generated-->
+    <!--@Table WS_STRUC_DIAGNOSIS_TEMPLET-->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="WS_TEMPLET_ID" jdbcType="VARCHAR" property="wsTempletId" />
+    <result column="WS_TEMPLET1_ID" jdbcType="VARCHAR" property="wsTemplet1Id" />
+    <result column="WS_DOCTOR_ID" jdbcType="VARCHAR" property="wsDoctorId" />
+    <result column="VALUE" jdbcType="VARCHAR" property="value" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, WS_TEMPLET_ID, WS_TEMPLET1_ID, WS_DOCTOR_ID, "VALUE"
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from WS_STRUC_DIAGNOSIS_TEMPLET
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from WS_STRUC_DIAGNOSIS_TEMPLET
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.domain.WsStrucDiagnosisTemplet">
+    <!--@mbg.generated-->
+    insert into WS_STRUC_DIAGNOSIS_TEMPLET (ID, WS_TEMPLET_ID, WS_TEMPLET1_ID, 
+      WS_DOCTOR_ID, "VALUE")
+    values (#{id,jdbcType=VARCHAR}, #{wsTempletId,jdbcType=VARCHAR}, #{wsTemplet1Id,jdbcType=VARCHAR}, 
+      #{wsDoctorId,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.domain.WsStrucDiagnosisTemplet">
+    <!--@mbg.generated-->
+    insert into WS_STRUC_DIAGNOSIS_TEMPLET
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="wsTempletId != null">
+        WS_TEMPLET_ID,
+      </if>
+      <if test="wsTemplet1Id != null">
+        WS_TEMPLET1_ID,
+      </if>
+      <if test="wsDoctorId != null">
+        WS_DOCTOR_ID,
+      </if>
+      <if test="value != null">
+        "VALUE",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="wsTempletId != null">
+        #{wsTempletId,jdbcType=VARCHAR},
+      </if>
+      <if test="wsTemplet1Id != null">
+        #{wsTemplet1Id,jdbcType=VARCHAR},
+      </if>
+      <if test="wsDoctorId != null">
+        #{wsDoctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.WsStrucDiagnosisTemplet">
+    <!--@mbg.generated-->
+    update WS_STRUC_DIAGNOSIS_TEMPLET
+    <set>
+      <if test="wsTempletId != null">
+        WS_TEMPLET_ID = #{wsTempletId,jdbcType=VARCHAR},
+      </if>
+      <if test="wsTemplet1Id != null">
+        WS_TEMPLET1_ID = #{wsTemplet1Id,jdbcType=VARCHAR},
+      </if>
+      <if test="wsDoctorId != null">
+        WS_DOCTOR_ID = #{wsDoctorId,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        "VALUE" = #{value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.WsStrucDiagnosisTemplet">
+    <!--@mbg.generated-->
+    update WS_STRUC_DIAGNOSIS_TEMPLET
+    set WS_TEMPLET_ID = #{wsTempletId,jdbcType=VARCHAR},
+      WS_TEMPLET1_ID = #{wsTemplet1Id,jdbcType=VARCHAR},
+      WS_DOCTOR_ID = #{wsDoctorId,jdbcType=VARCHAR},
+      "VALUE" = #{value,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
