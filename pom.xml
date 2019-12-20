@@ -54,6 +54,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
         <!-- 引入redis客户端jedis依赖 -->
         <!--<dependency>-->
             <!--<groupId>redis.clients</groupId>-->

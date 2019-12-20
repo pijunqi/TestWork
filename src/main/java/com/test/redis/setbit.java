@@ -17,16 +17,16 @@ public class setbit {
 //        (auth password 如果redis设置了密码需要放开下面的j.auth)
 //        j.auth("myredis");
 
-//2016-12-3  login operation user
+        //2016-12-3  login operation user
         j.setbit("login:2016-12-3".getBytes(), 1, true);
         j.setbit("login:2016-12-3".getBytes(), 124431, true);
-        j.setbit("login:2016-12-3".getBytes(),1231, true);
+        j.setbit("login:2016-12-3".getBytes(), 1231, true);
         j.setbit("login:2016-12-3".getBytes(), 323121, true);
         BitSet b = BitSet.valueOf(j.get("login:2016-12-3".getBytes()));
 
         //the number of bit value 1
         int lognum3 = b.cardinality();
-        System.out.println("2016-12-3  login user number: "+lognum3);
+        System.out.println("2016-12-3  login user number: " + lognum3);
 
 
 //2016-12-3  login operation user
@@ -36,14 +36,17 @@ public class setbit {
         BitSet b2 = BitSet.valueOf(j.get("login:2016-12-4".getBytes()));
 
         int lognum4 = b2.cardinality();
-        System.out.println("2016-12-4  login user number: "+b2.cardinality());
+        System.out.println("2016-12-4  login user number: " + b2.cardinality());
 
-        b.or(b2);
         //or操作之后 同样userid的记录会重合不做记录，所以具体的数据统计看自己的需求而定
+        b.or(b2);
+        System.out.println("or操作之后的b:" + b);
+        System.out.println("or操作之后的b2:" + b2);
+
         int lognumexceptsameuser = b.cardinality();
-        int logtotalnum = lognum3+lognum4;
-        System.out.println("2016-12-3 to 2016-12-4 login user number except same userid: "+lognumexceptsameuser);
-        System.out.println("2016-12-3 to 2016-12-4 login user number: "+logtotalnum);
+        int logtotalnum = lognum3 + lognum4;
+        System.out.println("2016-12-3 to 2016-12-4 login user number except same userid: " + lognumexceptsameuser);
+        System.out.println("2016-12-3 to 2016-12-4 login user number: " + logtotalnum);
     }
 
 }
