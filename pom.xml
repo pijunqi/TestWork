@@ -106,20 +106,23 @@
 
         <!-- mave引入外部jar包 -->
         <dependency>
-            <groupId>jedis</groupId>
-            <artifactId>jedis</artifactId>
-            <version>3.2.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/jedis-3.2.0.jar</systemPath>
-        </dependency>
-
-        <!-- mave引入外部jar包 -->
-        <dependency>
             <groupId>jol</groupId>
             <artifactId>jol</artifactId>
             <version>0.8</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/jol-core-0.8.jar</systemPath>
+        </dependency>
+
+
+        <!--连接oracle驱动-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0</version>
         </dependency>
 
         <!-- 引入redis客户端jedis依赖 -->
@@ -136,39 +139,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArguments>
-                        <verbose />
-                        <bootclasspath>${java.home}\lib\rt.jar;${java.home}\lib\jce.jar</bootclasspath>
-                    </compilerArguments>
-                </configuration>
-
-            </plugin>
-
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<verbose>true</verbose>-->
-                    <!--<fork>true</fork>-->
-                    <!--&lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-                    <!--<executable>${JAVA8_HOME}/bin/javac</executable>-->
-                    <!--<source>1.8</source>-->
-                    <!--<target>1.8</target>-->
-                    <!--<compilerArguments>-->
-                        <!--<verbose />-->
-                        <!--<arg>${project.basedir}/src/main/webapp/WEB-INF/lib</arg>-->
-                        <!--<bootclasspath>${java.home}\lib\rt.jar;${java.home}\lib\jce.jar</bootclasspath>-->
-                    <!--</compilerArguments>-->
-                <!--</configuration>-->
-
-            <!--</plugin>-->
         </plugins>
 
 
