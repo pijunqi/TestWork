@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.util.Properties;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 德鲁伊连接池
  * @author: pijunqi
  * @create: 2019-12-10 18:10

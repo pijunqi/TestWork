@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 项目启动类
  * @author: pijunqi
  * @create: 2019-12-05 14:35

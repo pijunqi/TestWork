@@ -1,7 +1,7 @@
 package com.test.常用算法及排序;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 二分法
  * @author: pijunqi
  * @create: 2019-12-18 16:47

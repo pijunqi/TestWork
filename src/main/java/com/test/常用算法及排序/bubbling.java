@@ -3,7 +3,7 @@ package com.test.常用算法及排序;
 import java.util.Arrays;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 冒泡排序 将数组排序输出
  * @author: pijunqi
  * @create: 2019-12-18 17:00

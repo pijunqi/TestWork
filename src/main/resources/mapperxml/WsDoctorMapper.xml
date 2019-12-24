@@ -99,4 +99,11 @@
       SIGN = #{sign,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectAllDoctor" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from WS_DOCTOR
+  </select>
 </mapper>

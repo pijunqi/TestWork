@@ -2,6 +2,8 @@ package com.mapper;
 
 import com.domain.WsDoctor;
 
+import java.util.List;
+
 public interface WsDoctorMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,7 @@ public interface WsDoctorMapper {
     int updateByPrimaryKeySelective(WsDoctor record);
 
     int updateByPrimaryKey(WsDoctor record);
+
+    //获取所有医生信息
+    List<WsDoctor> selectAllDoctor();
 }

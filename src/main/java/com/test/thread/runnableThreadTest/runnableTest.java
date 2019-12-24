@@ -1,7 +1,7 @@
 package com.test.thread.runnableThreadTest;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: ruannbleTest
  * @author: pijunqi
  * @create: 2019-12-09 17:21

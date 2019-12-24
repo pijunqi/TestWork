@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: list测试 list中Map合并重复数据（map中key相等的value值相加）
  * @author: pijunqi
  * @create: 2019-12-05 15:35

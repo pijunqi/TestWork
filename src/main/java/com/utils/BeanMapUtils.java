@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: JavaBean、Map互相转换，List JavaBean 、List Map互相转换工具类
  * @author: pijunqi
  * @create: 2019-12-05 17:34

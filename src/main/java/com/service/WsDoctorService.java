@@ -5,13 +5,15 @@ import com.mapper.WsDoctorMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class WsDoctorService{
 
     @Resource
     private WsDoctorMapper wsDoctorMapper;
 
-    //22
+
     public int deleteByPrimaryKey(String id) {
         return wsDoctorMapper.deleteByPrimaryKey(id);
     }
@@ -29,6 +31,11 @@ public class WsDoctorService{
     
     public WsDoctor selectByPrimaryKey(String id) {
         return wsDoctorMapper.selectByPrimaryKey(id);
+    }
+
+
+    public List<WsDoctor> selectAllDoctor() {
+        return wsDoctorMapper.selectAllDoctor();
     }
 
     

@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 线程池的工厂类, 用来生产线程池
  * @author: pijunqi
  * @create: 2019-12-10 16:54

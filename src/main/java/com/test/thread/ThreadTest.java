@@ -1,7 +1,7 @@
 package com.test.thread;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 多线程测试
  * @author: pijunqi
  * @create: 2019-12-09 16:54

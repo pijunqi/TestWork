@@ -3,7 +3,7 @@ package com.test.lock;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 锁机制
  * @author: pijunqi
  * @create: 2019-12-11 17:43

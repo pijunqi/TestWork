@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: map转换成list
  * @author: pijunqi
  * @create: 2019-12-05 17:38

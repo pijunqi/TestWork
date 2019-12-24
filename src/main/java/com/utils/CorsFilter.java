@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 跨域CorsFilter 类
  * @author: pijunqi
  * @create: 2019-12-11 09:31

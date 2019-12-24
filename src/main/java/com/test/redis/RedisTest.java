@@ -1,4 +1,4 @@
-//package com.test.redis;
+package com.test.redis;//package com.test.redis;
 //
 //
 //import redis.clients.jedis.Jedis;
@@ -7,7 +7,7 @@
 //
 //
 ///**
-// * @program: springDemo
+// * @program:
 // * @description: 测试redis 里面包含了很多方法
 // * @author: pijunqi
 // * @create: 2019-12-04 14:27

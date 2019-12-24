@@ -1,7 +1,7 @@
 package com.test.pattern.lazyHungry;
 
 /**
- * @program: springDemo
+ * @program:
  * @description: 各种模式
  * @author: pijunqi
  * @create: 2019-12-04 17:36
