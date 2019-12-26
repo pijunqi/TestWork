@@ -124,6 +124,11 @@
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+        </dependency>
 
         <!-- 引入redis客户端jedis依赖 -->
         <!--<dependency>-->
