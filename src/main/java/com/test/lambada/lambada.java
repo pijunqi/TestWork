@@ -6,6 +6,12 @@ package com.test.lambada;
  * @author: pijunqi
  * @create: 2019-12-26 11:04
  **/
+
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * lambada 使用条件
  * 1.接口当中只能有一个方法,
@@ -21,14 +27,14 @@ public class lambada {
  * n+m 参数的实现
  */
 //        单行表达式
-        say((n,m)->n+m);
+        say((n, m) -> n + m);
 
 //        单行表达式
-        say((String n,String m)->n+m);
+        say((String n, String m) -> n + m);
 
 //        语句块
-        say((n,m)->{
-           return n+m;
+        say((n, m) -> {
+            return n + m;
         });
 
 //        静态方法引用
@@ -45,12 +51,12 @@ public class lambada {
 
     }
 
-    static String sayHello(String name,String message){
-        return name+message;
+    static String sayHello(String name, String message) {
+        return name + message;
     }
 
-     String sayHelloNo(String name,String message){
-        return name+message;
+    String sayHelloNo(String name, String message) {
+        return name + message;
     }
 
     /**
@@ -62,13 +68,26 @@ public class lambada {
      */
 
 
-    public static void say (myInterface myInterface){
+    public static void say(myInterface myInterface) {
         System.out.println(myInterface.sayHello("皮军旗", "good man"));
     }
 
     @FunctionalInterface
-    public interface myInterface{
-        public abstract String sayHello(String name,String message);
+    public interface myInterface {
+        public abstract String sayHello(String name, String message);
 
     }
+
+    /**
+     * 流的生成
+     * 基于Stream Api生成
+     * 基于迭代器生成
+     */
+    public void streamTest() {
+        Stream.of("a", "b", "c").forEach(System.out::print);
+        Stream.iterate(0, a -> a + 1).filter(a -> a <= 10).collect(Collectors.toList());
+        Arrays.stream(new String[]{"a", "b"});
+    }
+
+
 }
